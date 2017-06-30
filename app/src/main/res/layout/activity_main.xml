@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--第1部分：内容布局-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--
+        (1) app:theme="@style/ThemeOverlay.AppCompat.Dark":
+        图标和字体都会显示为白色
+
+        (2) app:popupTheme="@style/Base.Theme.AppCompat.Light"
+        右侧弹出窗设为白色
+        -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
+            app:title="广交院实训"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:popupTheme="@style/Base.Theme.AppCompat.Light"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#44000000"/>
+
+        <!--底部选项卡-->
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+
+            <RadioButton
+                android:id="@+id/rb_01"
+                android:layout_weight="1"
+                android:text="新闻"
+                android:button="@null"
+                android:textSize="12sp"
+                android:checked="true"
+                android:padding="3dp"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_home_tab_01"
+                android:textColor="@color/selector_home_tab_color"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <RadioButton
+                android:id="@+id/rb_02"
+                android:layout_weight="1"
+                android:text="视听"
+                android:button="@null"
+                android:padding="3dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_home_tab_02"
+                android:textColor="@color/selector_home_tab_color"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <RadioButton
+                android:id="@+id/rb_03"
+                android:layout_weight="1"
+                android:text="阅读"
+                android:button="@null"
+                android:padding="3dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_home_tab_03"
+                android:textColor="@color/selector_home_tab_color"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <RadioButton
+                android:id="@+id/rb_04"
+                android:layout_weight="1"
+                android:text="发现"
+                android:button="@null"
+                android:padding="3dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_home_tab_04"
+                android:textColor="@color/selector_home_tab_color"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <RadioButton
+                android:id="@+id/rb_05"
+                android:layout_weight="1"
+                android:text="设置"
+                android:button="@null"
+                android:padding="3dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:drawableTop="@drawable/selector_home_tab_05"
+                android:textColor="@color/selector_home_tab_color"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <!--第2部分：侧滑菜单
+        添加如下属性让侧滑菜单显示在左边：
+        android:layout_gravity="left"
+    -->
+    <!--<LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity="left"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="侧滑菜单"
+            android:textColor="#aa000000"
+            android:textSize="16sp"/>
+
+    </LinearLayout>-->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="220dp"
+        android:layout_gravity="left"
+        app:headerLayout="@layout/navigation_view_header"
+        app:menu="@menu/navigation_view"
+        android:layout_height="match_parent"/>
+
+</android.support.v4.widget.DrawerLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
